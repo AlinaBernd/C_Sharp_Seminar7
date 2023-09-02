@@ -70,7 +70,7 @@ WriteMatrix(myMatrix);
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
-
+/*
 int[,] CreateRandomMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
@@ -120,7 +120,7 @@ int rowSearch = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input an index of column of the array to search: ");
 int columnSearch = Convert.ToInt32(Console.ReadLine());
 SearchNumber(myMatrix, rowSearch, columnSearch);
-
+*/
 
 // Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
@@ -129,7 +129,7 @@ SearchNumber(myMatrix, rowSearch, columnSearch);
 // 5 9 2 3
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
-/*
+
 int[,] CreateRandomMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
@@ -142,6 +142,7 @@ int[,] CreateRandomMatrix(int m, int n)
     }
     return matrix;
 }
+
 void WriteMatrix(int[,] matrix)
 {
     int m = matrix.GetLength(0);
@@ -155,30 +156,36 @@ void WriteMatrix(int[,] matrix)
         Console.WriteLine();
     }
 }
-int AverageRow (int[,] matrix)
-        int[] columnSums = new int[columns];
 
-        // Находим сумму элементов каждого столбца
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < columns; j++)
-            {
-                columnSums[j] += array[i, j];
-            }
-        }
+void AverageRow(int[,] matrix)
+{
+    int rows = matrix.GetLength(0);
+    int columns = matrix.GetLength(1);
 
-        double[] columnAverages = new double[columns];
-
-        // Находим среднее арифметическое элементов каждого столбца
+    double[] columnSums = new double[columns];
+    for (int i = 0; i < rows; i++)
+    {
         for (int j = 0; j < columns; j++)
         {
-            columnAverages[j] = (double)columnSums[j] / rows;
-        }
-
-        // Выводим средние арифметические элементов каждого столбца
-        for (int j = 0; j < columns; j++)
-        {
-            Console.WriteLine("Среднее арифметическое элементов столбца {0}: {1}", j+1, columnAverages[j]);
+            columnSums[j] += matrix[i, j];
         }
     }
-*/
+    double[] columnAverages = new double[columns];
+    for (int j = 0; j < columns; j++)
+    {
+        columnAverages[j] = columnSums[j] / rows;
+    }
+
+    for (int j = 0; j < columns; j++)
+    {
+        Console.WriteLine("The arithmetic mean of the elements of column {0}: {1}", j + 1, columnAverages[j]);
+    }
+}
+
+Console.Write("Input the number of rows of the array: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the number of columns of the array: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+int[,] myMatrix = CreateRandomMatrix(rows, columns);
+WriteMatrix(myMatrix);
+AverageRow(myMatrix);
