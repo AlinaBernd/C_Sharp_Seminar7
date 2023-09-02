@@ -1,7 +1,7 @@
 ﻿
 // Доп. задача. Написать программу, преобразующую число из десятеричной системы счисления в двоичную
 
-/* string DecimalToBinary(int decimalNumber) 
+string DecimalToBinary(int decimalNumber) 
 {
     string binaryNumber = "";
 
@@ -21,14 +21,14 @@ int decimalNumber = Convert.ToInt32(Console.ReadLine());
 string binaryNumber = DecimalToBinary(decimalNumber);
 
 Console.WriteLine($"A number {decimalNumber} in binary: {binaryNumber}");
-*/
+
 // Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 
 // m = 3, n = 4.
 // 0,5 7 -2 -0,2
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
-/*
+
 double[,] CreateRandomMatrix(int m, int n)
 {
     double[,] matrix = new double[m, n];
@@ -62,7 +62,7 @@ Console.Write("Input the number of columns of array: ");
 int columns = Convert.ToInt32(Console.ReadLine());
 double[,] myMatrix = CreateRandomMatrix(rows, columns);
 WriteMatrix(myMatrix);
-*/
+
 // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
 // Например, задан массив:
@@ -70,7 +70,7 @@ WriteMatrix(myMatrix);
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
-/*
+
 int[,] CreateRandomMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
@@ -120,7 +120,7 @@ int rowSearch = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input an index of column of the array to search: ");
 int columnSearch = Convert.ToInt32(Console.ReadLine());
 SearchNumber(myMatrix, rowSearch, columnSearch);
-*/
+
 
 // Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
